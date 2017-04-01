@@ -12,13 +12,12 @@ It's basically:
 
 3) setup env variables
   Add to .profile 
-
-    #docker stuff
-    export DOCKER_CONFIG=$HOME/config
-    export DOCKER_STORAGE=$HOME/cloud/common
-    export DOCKER_DOWNLOADS=$HOME/downloads
-    export DOCKER_HOSTNAME=FQDN_here
-    export DOCKER_TRANSCODE=/tmp
+>     #docker stuff
+>     export DOCKER_CONFIG=$HOME/config
+>     export DOCKER_STORAGE=$HOME/cloud/common
+>     export DOCKER_DOWNLOADS=$HOME/downloads
+>     export DOCKER_HOSTNAME=FQDN_here
+>     export DOCKER_TRANSCODE=/tmp
 
 4) Copy Taefik and Traefik to ~/config/traefik
 5) chmod +x traefik
