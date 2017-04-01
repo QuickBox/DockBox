@@ -28,3 +28,5 @@ Install other apps per the scripts
 
 go to https://host/user/  and this will be the main panel for the user
 other apps are called from organizr or https://server/user/app/ (needs last slash)
+
+Initial Organizr user is 'admin' with a password of 'Password1'
