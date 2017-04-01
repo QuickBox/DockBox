@@ -1,0 +1,40 @@
+################################################################
+# Global configuration
+################################################################
+
+traefikLogsFile = "$DOCKER_CONFIG/traefik/log/traefik.log"
+accessLogsFile = "$DOCKER_CONFIG/traefik/log/access.log"
+InsecureSkipVerify = true
+
+defaultEntryPoints = ["http", "https"]
+    [entryPoints]
+      [entryPoints.http]
+      address = ":80"
+      [entryPoints.http.redirect]
+      entryPoint = "https"
+      [entryPoints.https]
+      address = ":443"
+      [entryPoints.https.tls]
+      [entryPoints.https.auth.basic]    
+		usersFile = "$DOCKER_CONFIG/traefik/htpasswd"
+      
+[acme]
+    email = "my_email_addr.com"
+    storage = "$DOCKER_CONFIG/traefik/acme.json"
+    entryPoint = "https"
+    acmeLogging = true
+   [[acme.domains]]
+     main = "my.domain.com"
+       # sans = ["traefik.thepishoppe.com"]
+	   
+[web]
+address = ":8080"
+[web.auth.basic]
+usersFile = "$DOCKER_CONFIG/traefik/htpasswd"
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "my_domain.com"
+watch = true
+exposedbydefault = true
+insecureskipverify = true
