@@ -10,9 +10,9 @@
 #################################################################################
 
 #stop and remove docker container
-docker stop pritunl
-docker rm pritunl
+docker stop $USER-deluge
+docker rm $USER-deluge
 #remove config and Organizr tab
-# rm -rf $DOCKER_CONFIG/pritunl
-sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/pritunl/';"
+rm -rf $DOCKER_CONFIG/deluge
+sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/$USER/deluge/';"
 docker restart $USER-organizr

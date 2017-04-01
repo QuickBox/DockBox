@@ -10,9 +10,9 @@
 #################################################################################
 
 #stop and remove docker container
-docker stop pritunl
-docker rm pritunl
+docker stop $USER-couchpotato
+docker rm $USER-couchpotato
 #remove config and Organizr tab
-# rm -rf $DOCKER_CONFIG/pritunl
-sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/pritunl/';"
+rm -rf $DOCKER_CONFIG/couchpotato
+sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/$USER/couchpotato/';"
 docker restart $USER-organizr

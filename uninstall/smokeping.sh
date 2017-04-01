@@ -10,9 +10,8 @@
 #################################################################################
 
 #stop and remove docker container
-docker stop pritunl
-docker rm pritunl
+docker stop smokeping
+docker rm smokeping
 #remove config and Organizr tab
-# rm -rf $DOCKER_CONFIG/pritunl
-sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/pritunl/';"
+sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/smokeping/smokeping.cgi';"
 docker restart $USER-organizr

@@ -9,10 +9,8 @@
 #
 #################################################################################
 
-#stop and remove docker container
-docker stop pritunl
-docker rm pritunl
-#remove config and Organizr tab
-# rm -rf $DOCKER_CONFIG/pritunl
-sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/pritunl/';"
+docker stop $USER-medusa
+docker rm $USER-medusa
+rm -rf $DOCKER_CONFIG/medusa
+sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/$USER/medusa/';"
 docker restart $USER-organizr

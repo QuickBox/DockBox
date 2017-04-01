@@ -11,6 +11,7 @@
 docker run -d \
         --restart always \
         --name=plex \
+        --net=host \
         -e VERSION=latest \
         -e PGID=$(id -g) \
         -e PUID=$(id -u) \
@@ -20,10 +21,10 @@ docker run -d \
         -v $DOCKER_STORAGE:/data/movies \
         -v $DOCKER_TRANSCODE:/transcode \
         -l traefik.host="plex.wildhair.nl" \
-        -l traefik.port=32400 \
+        -l traefik.port=443 \
         -l traefik.protocol=https \
   	-p 32469:32469 \
   	-p 32469:32469/udp \
   	-p 5353:5353/udp \
   	-p 1900:1900/udp \
-rxwatcher/docker-plex
+linuxserver/plex

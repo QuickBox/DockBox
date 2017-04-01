@@ -10,9 +10,9 @@
 #################################################################################
 
 #stop and remove docker container
-docker stop pritunl
-docker rm pritunl
+docker stop $USER-beets
+docker rm $USER-beets
 #remove config and Organizr tab
-# rm -rf $DOCKER_CONFIG/pritunl
-sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/pritunl/';"
+rm -rf $DOCKER_CONFIG/beets
+sqlite3 $DOCKER_CONFIG/organizr/www/users.db "delete from tabs where url is 'https://$DOCKER_HOSTNAME/$USER/beets/';"
 docker restart $USER-organizr
