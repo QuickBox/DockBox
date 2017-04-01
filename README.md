@@ -19,9 +19,11 @@ It's basically:
 >     export DOCKER_HOSTNAME=FQDN_here
 >     export DOCKER_TRANSCODE=/tmp
 
-4) Copy Taefik and Traefik to ~/config/traefik
+4) Copy taefik and traefik.toml to ~/config/traefik
 5) chmod +x traefik
 6) execute Traefik as root: sudo ./traefik
+
+traefik.toml can be customized for Lets Encryt.
 
 now install Organizr per the scripts (needs to be installed first)
 Install other apps per the scripts
