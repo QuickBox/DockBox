@@ -23,7 +23,9 @@ It's basically:
 5) chmod +x traefik
 6) execute Traefik as root: sudo ./traefik
 
-traefik.toml can be customized for Lets Encryt.
+traefik.toml can be customized for Lets Encryt and will probably need a htpasswd file created in ~/config/traefik directory or you can comment that section out of the toml file.
+
+I highly recomment installing Portainer along with the Traefik web interface to do troubleshooting.
 
 now install Organizr per the scripts (needs to be installed first)
 Install other apps per the scripts
