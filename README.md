@@ -9,6 +9,7 @@ It's basically:
        sudo groupadd docker
        sudo gpasswd -a my_user docker
        sudo service docker restart
+       sudo systemctl enable docker
 
 3) setup env variables
   Add to .profile 
