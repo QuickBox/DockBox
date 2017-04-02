@@ -19,7 +19,7 @@ docker run -d \
         -v $DOCKER_STORAGE:/data/tvshows \
         -v $DOCKER_STORAGE:/data/movies \
         -v $DOCKER_TRANSCODE:/transcode \
-        -l traefik.host="plex.wildhair.nl" \
+        -l traefik.host="plex.domain.com" \
         -l traefik.port=32400 \
         -l traefik.protocol=https \
   	-p 32469:32469 \
